@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<style>
+    body {
+        background-image: url(Fuckhead.jpg);
+        background-size: contain;
+        align-content: center;
+    }
+
+    .container {
+        width: 70%;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-color: white;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 20%;
+        border: 2px solid;
+        border-radius: 5px;
+        border-color: black;
+    }
+
+    .title {
+        justify-content: center;
+        display: flex;
+    }
+
+    #Ctitle {
+        margin-right: 20%;
+    }
+
+    #Ftitle {
+        margin-left: 20%;
+    }
+
+    .textbox {
+        justify-content: center;
+        display: flex;
+    }
+
+    .input {
+        width: 25%;
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid;
+        border-radius: 5px;
+        border-color: black;
+    }
+</style>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">
+            <h5 id="Ctitle">Celcius</h5>
+            <h5 id="Ftitle">Fahrenheit</h5>
+        </div>
+        <div class="textbox">
+            <input class="input" ID="C" title="Enter Celcius" placeholder="Celcius" oninput="convertFahrenheit();" />
+            <input class="input" ID="F" title="Enter Fahrenheit" placeholder="Fahrenheit" oninput="convertCelcius();" />
+        </div>
+    </div>
+
+    <script>
+        function convertFahrenheit() {
+            var num = document.getElementById("C").value;
+            var new_num = (num * 1.8000) + 32;
+            document.getElementById("F").value = new_num.toFixed(1);
+        };
+        function convertCelcius() {
+            var num = document.getElementById("F").value;
+            var new_num = (num - 32) / 1.8000;
+            document.getElementById("C").value = new_num.toFixed(1);
+        };
+    </script>
+
+</body>
+</html>
